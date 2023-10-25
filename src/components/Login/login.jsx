@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import pplImg from './Characters.svg';
 import useSelector from "react"
@@ -20,20 +20,21 @@ const Title = styled.div`
     line-height:48px;
     font-family:ferry_black;
     margin: 0 0  14px 0;
-
+    @media screen and (max-width:376px) {
+        width:383px;
+        height:104px;
+        font-size:22px;
+        line-height:26.4px;
+    }
 `
 
-
-
-const Wrapper = styled.div`
-    width:1440px;
-    height:673px;
-    border:1px solid black;
-
-`
 const ContentDiv = styled.div`
-    height:672px;
+    width:100%;
+    /* height:672px; */
+    height:100%;
+    border:1px solid black;
     display: flex;
+    position: relative;
     .main {
         width:745px;
         height: 501px;
@@ -124,39 +125,91 @@ const ContentDiv = styled.div`
             position: absolute;
         }
     }
+    @media screen and (max-width:376px) {
+        & {
+            flex-direction: column;
+        }
+        .main {
+            margin:31px 0 0 14px;
+            position:relative;
+            height:100%;
+            width:360px;
+            img {
+                width:335px;
+                height:356px;
+                margin-left:0;
+                position:absolute;
+                top:200px;
+                display:none;
+            }
+        }
+        .user {
+            width:335px;
+            height:585px;
+            
+            .lock {
+                right:148px;
+                bottom:515px;
+            }
+            .userDiv {
+                border:1px solid green;
+                margin:0;
+                width:335px;
+                margin-left:20px;
+                margin-top:40px;
+            }
+            .userSpans {
+                width:305px;
+                span:nth-child(1) {
+                    width:103px;
+                }
+                span:nth-child(2) {
+                    width:182px;
+                }
+            }
+            .userForm {
+                width:305px;
+            }
+            .signUp {
+                width:305px;
+                a {
+                    margin-left:80px;
+                }
+            }
+        }
+        
+    }
 `
 
 const LoginPage = ({ auth, setAuth }) => {
-    const [wrongData,setWrongData] = useState(false);
- 
+    const [wrongData, setWrongData] = useState(false);
+
     return (
-        <Wrapper >
-            <ContentDiv >
-                <div className="main">
-                    <Title>Для оформления подписки на тариф, необходимо авторизоваться.</Title>
-                    <img src={pplImg} alt='ppl' />
-                </div>
-                <div className="user">
-                    <img src={lock} alt="lock" />
-                    <div className="userDiv">
-                        <SingUp
-                           wrongData={wrongData}
-                           setWrongData={setWrongData} 
-                           setAuth={setAuth}
-                        />
-                        <div className="signUpWith">
-                            <span>Войти через:</span>
-                            <div>
-                                <a href="#"><img src={yandex} alt="yandex" /></a>
-                                <a href="#"><img src={facebook} alt="facebook" /></a>
-                                <a href="#"><img src={google} alt="google" /></a>
-                            </div>
+        <ContentDiv >
+            <div className="main">
+                <Title>Для оформления подписки на тариф, необходимо авторизоваться.</Title>
+                <img src={pplImg} alt='ppl' />
+            </div>
+            <div className="user">
+                <img src={lock} className="lock" alt="lock" />
+                <div className="userDiv">
+                    <SingUp
+                        wrongData={wrongData}
+                        setWrongData={setWrongData}
+                        setAuth={setAuth}
+                    />
+                    <div className="signUpWith">
+                        <span>Войти через:</span>
+                        <div>
+                            <a href="#"><img src={yandex} alt="yandex" /></a>
+                            <a href="#"><img src={facebook} alt="facebook" /></a>
+                            <a href="#"><img src={google} alt="google" /></a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </ContentDiv>
-        </Wrapper>
+        </ContentDiv>
     )
 }
 

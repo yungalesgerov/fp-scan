@@ -15,7 +15,8 @@ const StyledDiv = styled.div`
 
     img {
         margin: 30px 0px 19px 24px;
-    }
+    
+}
 `
 const TextDiv = styled.div`
     font-family: inter;

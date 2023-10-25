@@ -29,7 +29,8 @@ const Button = styled.button`
 
 const MainWrapper = styled.div`
     width: 1440px;
-    height: 2637px;
+    /* height: 2637px; */
+    height:100%;
     border: 1px solid red;
     display: flex;
     flex-wrap:wrap;
@@ -58,6 +59,9 @@ const Title = styled.h1`
         font-size:28px;
         line-height:33.6px;
         margin-left:14px; 
+        /* .title2 {
+            margin-top:26px;
+        } */
     }
 `
 
@@ -69,9 +73,19 @@ const ContentDiv = styled.div`
     &:nth-child(1) {
         display:flex;
     }
-    /* img:nth-child(2) {
-        margin-left: 157px;
-    } */
+    &:nth-child(3) {
+        height: 575.52px;
+        width: 1307px;
+
+    }
+    &:nth-child(4) {
+        width:1320px;
+        height:664px;
+        .cards {
+            display:flex;
+        }
+    }
+
     
     .headerCard {
         position: relative;
@@ -80,9 +94,12 @@ const ContentDiv = styled.div`
         border: 1px solid green;
         h2 {
             margin: 30px 0 10px 30px ;
+            width:131px;
+            height:36px;
         }
         img {
             margin:-89px 0 0 307px;
+            position:absolute;
         }
     }
     .headerCardText {
@@ -134,17 +151,90 @@ const ContentDiv = styled.div`
     }
     @media screen and (max-width:376px) {
         &:nth-child(1) {
-            display:inline-block;
+            flex-direction:column;
+            .mainImg {
+                width:347px;
+                height:342px;
+                margin:0;
+                top: 200px;
+            }
         }
-        .mainImg {
-            /* position:absolute; */
-            width:347px;
-            height:342px;
-            /* margin: 356px  0 0 -14px; */
-            margin:0;
-            top: 200px;
+        &:nth-child(2) {
+            margin-top:55px;
+            h1 {
+                font-size:28px;
+                width:274px;
+            }
+            div {
+                margin-top:0;
+                width:298px;
+            }
+        }
+        &:nth-child(3) {
+            width:360px;
+            height:392px;
+            img {
+                /* width:360px;
+                height:392px; */
+                width:100%;
+                height:100%;
+            }
+        }
+        &:nth-child(4) {
+            width:360px;
+            height:1650px;
+            .cards {
+                flex-direction:column;
+                width:335px;
+                .card-item {
+                    width:335px;
+                    height:512px;
+                    margin-bottom:30px;
 
+                    .headerCard {
+                        width:335px;
+                        div {
+                            width:285px;
+                            height:22px;
+                            font-size:15px;
+                        }
+                        img {
+                            margin-left:240px;
+                        }
+                    }
+                    div:nth-child(2) {
+                        button {
+                            width:286px;
+                            margin-top:-10px;
+                        }
+                        .currentPrice {
+                            width:114px;
+                            font-size:25px;
+                        }
+                        .oldPrice {
+                            font-size:16px;
+                        }
+                        .currentTarif {
+                            font-size:10px;
+                        }
+                        .tarif-credit {
+                            width:273px;
+                        }
+                        .tarifInfo {
+                            width:310px;
+                            margin-bottom:20px;
+                        }
+                    }
+                }
+            }
         }
+        .heroDiv {
+            button {
+                width:335px;
+                margin:32px 0 26px 14px;
+            }
+        }
+
     }
 `
 const TextDiv = styled.div`
@@ -202,7 +292,7 @@ const Main = ({ auth }) => {
                         Комплексный анализ публикаций, получение данных <br /> в формате PDF на электронную почту.
                     </TextDiv>
                     <Button
-                        style={{ fontSize: 22, margin: 0, opacity: auth ? 1 : 0.5 }}
+                        style={{ fontSize: 22, opacity: auth ? 1 : 0.5 }}
                         disabled={auth ? false : true}
                         onClick={() => navigate('/search')}
                     >Запросить данные
@@ -218,16 +308,16 @@ const Main = ({ auth }) => {
                     <img src={arrowLeft} alt='arrow' />
                 </div>
             </ContentDiv >
-            <ContentDiv style={{ height: 575.52, width: 1307 }} >
+            <ContentDiv>
                 <img src={mainImg2} alt='mainimg2' />
 
             </ContentDiv>
-            <ContentDiv style={{ height: 664 }} >
+            <ContentDiv      >
                 <Title className="title2"> наши тарифы </Title>
-                <div className="cards" style={{ display: 'flex' }}>
+                <div className="cards">
                     <div className="card-item card-item1">
                         <div className="headerCard" style={{ backgroundColor: '#FFB64F' }} >
-                            <h2 style={{ width: 131, height: 36 }}>Beginner</h2>
+                            <h2 >Beginner</h2>
                             <TextDiv className="headerCardText">Для небольшого исследования</TextDiv>
                             <img style={{ position: 'absolute' }} src={cardLogo2} alt="cardLogo2" />
                         </div>
@@ -252,9 +342,9 @@ const Main = ({ auth }) => {
                     </div>
                     <div className="card-item card-item2">
                         <div className="headerCard" style={{ backgroundColor: '#7CE3E1' }} >
-                            <h2 style={{ width: 131, height: 36 }}>Pro</h2>
+                            <h2 >Pro</h2>
                             <TextDiv className="headerCardText">Для HR и фрилансеров</TextDiv>
-                            <img style={{ position: 'absolute', }} src={cardLogo3} alt="cardLogo3" />
+                            <img  src={cardLogo3} alt="cardLogo3" />
                         </div>
                         <div>
                             <div style={{ display: "flex" }}>
@@ -276,7 +366,7 @@ const Main = ({ auth }) => {
                     </div>
                     <div className="card-item card-item3">
                         <div className="headerCard" style={{ backgroundColor: '#000000', color: '#fff' }} >
-                            <h2 style={{ width: 131, height: 36 }}>Business</h2>
+                            <h2 >Business</h2>
                             <TextDiv className="headerCardText">Для корпоративных клиентов</TextDiv>
                             <img style={{ position: 'absolute' }} src={cardLogo1} alt="cardLogo2" />
                         </div>

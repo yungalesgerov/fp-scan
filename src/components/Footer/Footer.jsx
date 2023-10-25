@@ -29,6 +29,19 @@ const FooterDiv = styled.div`
     .copyright {
         margin-top: 21px;
     }
+    @media screen and (max-width:376px) {
+        width:100%;
+        img {
+            width:111px;
+            height:111px;
+            margin-left:30px;
+            margin-top:0px;
+
+        }
+        .footer-info {
+            margin-left:0px;
+        }
+    }
 `
 
 

@@ -27,6 +27,10 @@ const Button = styled.button`
     border-radius:5px;
     margin-bottom:15px;
     font-family: inter;
+    @media screen and (max-width:376px) {
+        width:305px;
+        
+    }
 `
 const Input = styled.input`
     width:379px;
@@ -37,6 +41,9 @@ const Input = styled.input`
     margin:0;
     background: none;
     font-size:18px;
+    @media screen and (max-width:376px) {
+        width:100%;
+    }
 `
 
 

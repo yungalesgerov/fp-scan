@@ -3,6 +3,9 @@ import userPhoto from './Mask group.svg';
 import { useSelector } from "react-redux";
 import { selectUser } from "../../jsAdditions/userSlice";
 import { Spinner } from 'react-bootstrap';
+import BurgerMenu from './burgerMenu';
+
+
 
 const TableInfo = () => {
     const user = useSelector(selectUser);

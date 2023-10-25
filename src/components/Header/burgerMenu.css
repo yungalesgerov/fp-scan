@@ -13,6 +13,7 @@
     /* background-color: #029491; */
 }
 
+
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
     background: #029491;
@@ -84,7 +85,7 @@
 
 @media  screen and (max-width:376px) {
     .bm-burger-button {
+        position: absolute;
         top:34px;
-        margin-left:200px;
     }
 }
