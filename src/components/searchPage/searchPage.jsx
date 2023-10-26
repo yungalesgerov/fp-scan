@@ -2,17 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import doc from './Document.svg';
 import folders from './Folders.svg';
-import rocket from './Group 1171274244.svg'
+import rocket from './Group 1171274244.svg';
+import './SearchPage.css';
 import SearchPageTable from "./searchPageTable";
 const ContentDiv = styled.div`
-    width:1380px;
-    height:892px;
+    width:100%;
+    height:100%;
     position:relative;
     padding-left: 60px;
     border:1px solid green;
     img {
         position:absolute;
-        margin: -472px 0 0 989px;
+        margin: -472px 0 0 920px;
     }
     .searchDiv {
         width:1298px;
@@ -35,6 +36,41 @@ const ContentDiv = styled.div`
         }
         
     }
+    @media screen and (max-width:376px) {
+        padding:0;
+        .searchDiv {
+            position:relative;
+            width:361px;
+            height:262px;
+            h1 {
+                width:100%;
+                height: 136px;
+                font-size:28px;
+                line-height:33.6px;
+            }
+            span {
+                width:100%;
+                height:66px;
+                font-size:18px;
+                line-height:22px;
+            }
+            img:last-child {
+                display:none;
+            }
+            .doc {
+                width:58px;
+                height:58px;
+                position:absolute;
+                margin:-120px 0 0 250px;
+            }
+        }
+       img {
+        margin:0 0 0 0px;
+        position:relative;
+        width:370px;
+        height:403px;
+       } 
+    }
 `
 const SearchPanel = styled.div`
     width:872px;
@@ -42,6 +78,13 @@ const SearchPanel = styled.div`
     font-family:inter;
     font-size:18px;
     border:1px solid red;
+    @media screen and (max-width:376px) {
+        width:100%;
+        height:650px;
+        .checkDiv {
+            display:none;
+        }
+    }
 `
 const Title = styled.h1`
     width:817px;
@@ -70,7 +113,6 @@ const SearchPage = () => {
                 <SearchPageTable />
             </SearchPanel>
             <img src={rocket} alt="rocket" />
-
         </ContentDiv>
 
 

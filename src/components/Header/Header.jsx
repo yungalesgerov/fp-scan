@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import logo from '../Header/SGN_09_24_2022_1663968217400 1.svg'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -152,12 +152,10 @@ const HeaderBlock = styled.div`
     .bm-burger-button {
       margin-left:  200px;
     }
-    
   }
 `
 
 const Header = ({auth,setAuth}) => {
-  
   const navigate = useNavigate();
   const user = useSelector(selectUser);
   return (

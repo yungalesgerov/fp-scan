@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-// import "./SearchPage.css";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { responseData, objectSearch } from "../../jsAdditions/histogramsSlice";
-import InnValidation from '../../validateInn';
+import InnValidation from '../../validateInn.js';
 
 const FormDiv = styled.div`
   width: 406px;
@@ -13,7 +12,7 @@ const FormDiv = styled.div`
   border:1px solid green;
   margin:21px 0 0 45px;
   .field {
-    color:grey;
+    color: grey;
     width:259px;
     height:17px;
     font-size:14px;
@@ -31,6 +30,11 @@ const FormDiv = styled.div`
     height:22px;
     margin-bottom:15px;
   }
+  @media screen and (max-width:376px) {
+    width:99%;
+    height:80px;
+    margin:21px 0 0 0;
+  }
 `
 const FormDivS = styled(FormDiv)`
   width:372px;
@@ -39,6 +43,9 @@ const FormDivS = styled(FormDiv)`
     width:372px;
     height:94px;
     margin-bottom:20px;
+  }
+  @media screen and (max-width:376px) {
+    margin:21px 0 0 0;
   }
 `
 
@@ -53,6 +60,10 @@ const Button = styled.button`
     margin-left: 66px;
     font-size:20px;
     margin-bottom:10px;
+  @media screen and (max-width:376px) {
+    /* margin:0 auto; */
+    margin: 0 0 6px 34px;
+  }  
 `
 const Input = styled.input`
   height:43px;
@@ -61,7 +72,9 @@ const Input = styled.input`
   border:1px solid black;
   margin-top:20px;
   text-align:center;
-  /* padding:0 20px; */
+  @media screen and (max-width:376px) {
+    width:98%;
+  }
 `
 
 function SearchPageTable() {
@@ -390,8 +403,7 @@ function SearchPageTable() {
   };
 
   return (
-    <Form
-      style={{ width: 872, height: 543, display: 'flex', justifyContent:'space-between' }}
+    <Form className="formPageTable"
       onSubmit={handleSubmitSearch}
     >
       <FormDivS>
