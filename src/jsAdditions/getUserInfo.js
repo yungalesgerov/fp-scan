@@ -1,4 +1,4 @@
-import { logIn } from '../features/userSlice'
+import { logIn } from './userSlice';
 
 export const getUserInfo = async (token, dispatch) => {
 
