@@ -13,6 +13,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../index.css';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../jsAdditions/userSlice";
 
 const Button = styled.button`
     cursor:pointer;
@@ -81,6 +83,7 @@ const ContentDiv = styled.div`
     &:nth-child(4) {
         width:1320px;
         height:664px;
+        margin-bottom:40px;
         .cards {
             display:flex;
         }
@@ -183,6 +186,7 @@ const ContentDiv = styled.div`
         &:nth-child(4) {
             width:360px;
             height:1650px;
+            margin-bottom:0;
             .cards {
                 flex-direction:column;
                 width:335px;
@@ -278,6 +282,7 @@ const TextDiv = styled.div`
 `
 
 const Main = ({ auth }) => {
+    const user = useSelector(selectUser);
     const navigate = useNavigate();
     return (
         <MainWrapper>
@@ -292,8 +297,8 @@ const Main = ({ auth }) => {
                         Комплексный анализ публикаций, получение данных <br /> в формате PDF на электронную почту.
                     </TextDiv>
                     <Button
-                        style={{ fontSize: 22, opacity: auth ? 1 : 0.5 }}
-                        disabled={auth ? false : true}
+                        style={{ fontSize: 22, opacity: user ? 1 : 0.5 }}
+                        disabled={user ? false : true}
                         onClick={() => navigate('/search')}
                     >Запросить данные
                     </Button>
