@@ -15,6 +15,7 @@ import '../../index.css';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../jsAdditions/userSlice";
+import mediaImg from './media.svg';
 
 const Button = styled.button`
     cursor:pointer;
@@ -33,7 +34,7 @@ const MainWrapper = styled.div`
     width: 1440px;
     /* height: 2637px; */
     height:100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-wrap:wrap;
     align-content: space-around;
@@ -69,15 +70,20 @@ const Title = styled.h1`
 
 const ContentDiv = styled.div`
     width: 1320px;
-    border : 1px solid grey;
+    /* border : 1px solid grey; */
     margin: 0 auto;
     position:relative;
     &:nth-child(1) {
         display:flex;
+        height:620px;
+    }
+    &:nth-child(2) {
+        margin-bottom:70px;
     }
     &:nth-child(3) {
         height: 575.52px;
         width: 1307px;
+        margin-bottom:100px;
 
     }
     &:nth-child(4) {
@@ -94,7 +100,7 @@ const ContentDiv = styled.div`
         position: relative;
         width:415px;
         height:132px;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         h2 {
             margin: 30px 0 10px 30px ;
             width:131px;
@@ -113,13 +119,13 @@ const ContentDiv = styled.div`
         margin-top:70px;
         width: 1320px;
         height:540px;
-        border: 1px solid brown;
+        /* border: 1px solid brown; */
         justify-content: space-between;
     }
     .card-item {
         width:415px;
         height:540px;
-        border: 2px solid black;
+        /* border: 2px solid black; */
         font-family: inter;
     }
     .currentPrice {
@@ -134,7 +140,7 @@ const ContentDiv = styled.div`
         width:97px;
         height:30px;
         font-size:22px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         color: grey;
         text-decoration: line-through;
         margin: 33px 0 0 19px;
@@ -154,6 +160,7 @@ const ContentDiv = styled.div`
     }
     @media screen and (max-width:376px) {
         &:nth-child(1) {
+            height:700px;
             flex-direction:column;
             .mainImg {
                 width:347px;
@@ -176,17 +183,18 @@ const ContentDiv = styled.div`
         &:nth-child(3) {
             width:360px;
             height:392px;
+            background-image:url(${mediaImg});
+
             img {
-                /* width:360px;
-                height:392px; */
                 width:100%;
                 height:100%;
+                display:none;
             }
         }
         &:nth-child(4) {
             width:360px;
             height:1650px;
-            margin-bottom:0;
+            margin-bottom:70px;
             .cards {
                 flex-direction:column;
                 width:335px;
@@ -223,6 +231,7 @@ const ContentDiv = styled.div`
                         }
                         .tarif-credit {
                             width:273px;
+                            border:none;
                         }
                         .tarifInfo {
                             width:310px;
@@ -248,7 +257,7 @@ const TextDiv = styled.div`
     font-weight: 400;
     width: 359px;
     height: 66px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-left:24px;
 
     &.titleSub {
@@ -286,8 +295,8 @@ const Main = ({ auth }) => {
     const navigate = useNavigate();
     return (
         <MainWrapper>
-            <ContentDiv style={{ height: 620}} >
-                <div className="heroDiv" style={{border:"1px solid green"}} >
+            <ContentDiv >
+                <div className="heroDiv"  >
                     <Title style={{marginTop: 45 }} > сервис по поиску
                         <br /> публикаций
                         <br /> о компании
@@ -380,7 +389,7 @@ const Main = ({ auth }) => {
                                 <div className="currentPrice">2 379 ₽</div>
                                 <div className="oldPrice">3 700 ₽</div>
                             </div>
-                            <TextDiv className='tarif-credit' style={{ border: 'none' }}></TextDiv>
+                            <TextDiv className='tarif-credit' ></TextDiv>
                             <TextDiv className="tarifInfo">
                                 <h3 style={{ margin: 0 }}>В тариф входит: </h3>
                                 <div style={{ marginTop: 10 }}>

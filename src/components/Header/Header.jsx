@@ -12,7 +12,7 @@ import './burgerMenu.css';
 
 const HeaderBlock = styled.div`
   width: 1440px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 93px;
   display: flex ;
   position:relative;
@@ -103,16 +103,13 @@ const HeaderBlock = styled.div`
   .auth-user {
     width: 111px;
     height: 32px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display:flex;
     font-family: inter;
     font-size:14px;
     line-height: 16.94px;
     margin-left: 128px;
     margin-top: 30px;
-    div:nth-child(1) {
-      
-    }
     .exit {
       font-size: 10px;
       width: 31px;
@@ -151,6 +148,25 @@ const HeaderBlock = styled.div`
     }
     .bm-burger-button {
       margin-left:  200px;
+    }
+  }
+  @media screen and (min-width:377px) and (max-width:768px) {
+    .user {
+      display:none;
+    }
+    .auth-user {
+      display:none;
+
+    }
+    .header-links {
+      display:none;
+      
+    }
+    .bm-burger-button {
+      margin-left:30em;
+    }
+    .header-stats {
+      margin-left:40em;
     }
   }
 `

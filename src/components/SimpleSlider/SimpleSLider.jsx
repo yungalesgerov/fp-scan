@@ -12,11 +12,9 @@ const StyledDiv = styled.div`
     border-radius: 10px;
     /* border: 1px solid; */
     box-shadow: 0px 0px 20px 0px #00000033;
-
     img {
         margin: 30px 0px 19px 24px;
-    
-}
+    }
 `
 const TextDiv = styled.div`
     font-family: inter;
@@ -27,7 +25,7 @@ const TextDiv = styled.div`
     height: 66px;
     /* border: 1px solid black; */
     margin-left:24px;
-`
+`   
 
 
 

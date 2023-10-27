@@ -4,9 +4,10 @@ import styled from 'styled-components'
 import { useNavigate } from "react-router-dom";
 
 const FooterDiv = styled.div`
-    width: 1440px;
+    min-width:1440px;
+    width:100%;
     height: 137px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     background-color: #029491;
     display: flex;
     img {
@@ -31,6 +32,7 @@ const FooterDiv = styled.div`
     }
     @media screen and (max-width:376px) {
         width:100%;
+        min-width:375px;
         img {
             width:111px;
             height:111px;

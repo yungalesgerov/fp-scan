@@ -10,7 +10,7 @@ const ContentDiv = styled.div`
     height:100%;
     position:relative;
     padding-left: 60px;
-    border:1px solid green;
+    /* border:1px solid green; */
     img {
         position:absolute;
         margin: -472px 0 0 920px;
@@ -18,7 +18,7 @@ const ContentDiv = styled.div`
     .searchDiv {
         width:1298px;
         height:214px;
-        border:1px solid black;
+        /* border:1px solid black; */
         span {
             width:534px;
             height:48px;
@@ -77,7 +77,7 @@ const SearchPanel = styled.div`
     height:543px;
     font-family:inter;
     font-size:18px;
-    border:1px solid red;
+    /* border:1px solid red; */
     @media screen and (max-width:376px) {
         width:100%;
         height:650px;
@@ -96,7 +96,7 @@ const Title = styled.h1`
     font-weight: 900;
     margin: 45px 0 25px 0px;
     padding: 0;
-    border:1px solid red;
+    /* border:1px solid red; */
 `
 
 const SearchPage = () => {

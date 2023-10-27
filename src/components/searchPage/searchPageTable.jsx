@@ -9,7 +9,7 @@ import InnValidation from '../../validateInn.js';
 const FormDiv = styled.div`
   width: 406px;
   height: 500px;
-  border:1px solid green;
+  /* border:1px solid green; */
   margin:21px 0 0 45px;
   .field {
     color: grey;
@@ -69,7 +69,7 @@ const Input = styled.input`
   height:43px;
   width:242px;
   border-radius:5px;
-  border:1px solid black;
+  /* border:1px solid black; */
   margin-top:20px;
   text-align:center;
   @media screen and (max-width:376px) {
